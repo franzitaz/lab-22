@@ -2,10 +2,31 @@
   "products": [
     {
       "id": 1,
-      "name": "Product 1",
-      "picture": "https://somos.lojaiplace.com.br/wp-content/uploads/2021/04/apple_iphone-12-spring21_purple_04202021.jpg",
-      "quantity": 2,
-      "price": 299.50
+      "name": "Fone de Ouvido Logitech Jaybird, In Ear, Freedom 2, Branco",
+      "picture": "https://www.iplace.com.br/ccstore/v1/images/?source=/file/v1166257060769151156/products/178032.01-fone-de-ouvido-freedom-2-jaybird-branco.jpg&height=1000&width=1000&quality=0.9",
+      "stock": 4,
+      "price": 602.10
+    },
+    {
+      "id": 2,
+      "name": "Apple iPad Pro, M1 (11``, Wi-Fi, 128GB) - Prata",
+      "picture": "https://www.iplace.com.br/ccstore/v1/images/?source=/file/v4443936869996713827/products/218437.00-ipad-pro-apple-m1-tela11-128gb-wifi-mhqt3bz-a.jpg&height=1000&width=1000&quality=0.9",
+      "stock": 4,
+      "price": 9719.10
+    },
+    {
+      "id": 3,
+      "name": "Apple iPhone 13 Pro Max (512GB) - Prateado",
+      "picture": "https://www.iplace.com.br/ccstore/v1/images/?source=/file/v1832125718358065989/products/219199.00-apple-iphone-13-pro-max-512gb-prateado-mllg3bz-a.jpg&height=1000&width=1000&quality=0.9",
+      "stock": 4,
+      "price": 12519.00 
+    },
+    {
+      "id": 4,
+      "name": "Apple MacBook Pro 13,3” (M1 de Apple com 8 CPU e 8 GPU, 8 GB RAM, 256 GB SSD) - Cinza Espacial",
+      "picture": "https://www.iplace.com.br/ccstore/v1/images/?source=/file/v2397407778117544594/products/216685.01-macbook-pro-2020-myd92bz-a.jpg&height=1000&width=1000&quality=0.9",
+      "stock": 4,
+      "price": 15569.10
     }
   ]
 }

@@ -5,38 +5,49 @@ import Button from "../Button";
 import Typography from "../Typography";
 
 import { Wrapper, Subtotal, Header } from "./styles";
+import useCart from "../../hooks/useCart";
+import ProductsListCart from "../ProductsListCart";
 
-export type MenuPaymentProps = {
+export type CartProps = {
   isOpen: boolean;
   setIsOpen: Dispatch<SetStateAction<boolean>>;
 };
 
-/**
- * Adicionar itens ao carrinho, design ao seu critério mas deve conter:
- * - Nome do produto
- * - Imagem
- * - Preço
- * - Incrementador
- */
+const Cart = ({ isOpen, setIsOpen }: CartProps) => {
 
-const MenuPayment = ({ isOpen, setIsOpen }: MenuPaymentProps) => (
-  <Wrapper isOpen={isOpen}>
-    <Header>
-      <Typography level={5} size="large" fontWeight={600}>
-        Produtos no carrinho
-      </Typography>
-      <CloseOutline onClick={() => setIsOpen(false)} />
-    </Header>
+  const { cart } = useCart();
 
-    <Subtotal>
-      <Typography level={5} size="large" fontWeight={600}>
-        Total
-      </Typography>
-      <Typography>1,600.50</Typography>
-    </Subtotal>
+  const valueTotal = () => {
+    
+    let total: number = 0;
+    
+    cart.forEach((product)=>{
+      total = total + product.quantity! * product.price
+    })
 
-    <Button fullWidth>Finalizar compra</Button>
-  </Wrapper>
-);
+    return total.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+  }
 
-export default MenuPayment;
+  return (
+    <Wrapper isOpen={isOpen}>
+      <Header>
+        <Typography level={5} size="large" fontWeight={600}>
+          Produtos no carrinho
+        </Typography>
+        <CloseOutline onClick={() => setIsOpen(false)} />
+      </Header>
+
+        <ProductsListCart /> 
+
+      <Subtotal>
+        <Typography level={5} size="large" fontWeight={600}>
+          Total
+        </Typography>
+        <Typography>{valueTotal()}</Typography>
+      </Subtotal>
+
+      <Button fullWidth>Finalizar compra</Button>
+    </Wrapper>
+  );
+}
+export default Cart;
