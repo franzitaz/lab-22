@@ -16,6 +16,7 @@ const useCart = create<typeUseCart>((set) => ({
     setCart: (id, name, price, picture, quantity) => {
         set(({ cart }) => {
             let permission = true;
+            
             cart.forEach(products => {if (products.id === id) permission = false});
 
             if (permission) {
